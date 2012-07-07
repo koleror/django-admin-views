@@ -22,6 +22,10 @@ setup(
             'templates/admin/*',
         ]
     },
+    install_requires = [
+        'django>=1.4',
+    ],
+    tests_require = ['django-coverage', 'coverage'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
