@@ -11,7 +11,7 @@ f.close()
 setup(
     name='django-admin-views',
     version=".".join(map(str, VERSION)),
-    description='django-admin-views is a simple way to add custom admin views and direct URLs to the Django admin'
+    description='django-admin-views is a simple way to add custom admin views and direct URLs to the Django admin',
     long_description=readme,
     author='Frank Wiles',
     author_email='frank@revsys.com',
