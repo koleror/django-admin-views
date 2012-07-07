@@ -64,6 +64,11 @@ With this third-party developers need only instruct their users to install their
 
 Hope you find it useful and as always feedback is certainly welcome.
 
+Screenshot
+==========
+
+`Example Screenshot <https://github.com/frankwiles/django-admin-views/wiki>`_
+
 Author
 ======
 Frank Wiles <frank@revsys.com> <http://www.revsys.com>
