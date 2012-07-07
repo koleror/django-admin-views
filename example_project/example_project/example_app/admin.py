@@ -1,5 +1,5 @@
 from django.contrib import admin
-from admin_views.admin import AdminViews, admin_view
+from admin_views.admin import AdminViews
 from django.shortcuts import redirect
 
 from example_project.example_app.models import TestModel
@@ -10,7 +10,6 @@ class TestAdmin(AdminViews):
             ('Go to LJW', 'http://www.ljworld.com'),  # Direct URL
     )
 
-    @admin_view
     def process(self, *args, **kwargs):
         return redirect('http://www.cnn.com')
 

@@ -49,9 +49,3 @@ class AdminViews(admin.ModelAdmin):
 
         return added_urls + original_urls
 
-def admin_view(view):
-    def inner(self, *args, **kwargs):
-        opts = self.model._meta
-        app_label = opts.app_label
-    return update_wrapper(inner, view)
-
