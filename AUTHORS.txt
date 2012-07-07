@@ -1,0 +1,1 @@
+django-admin-views was created by Frank Wiles <frank@revsys.com>
