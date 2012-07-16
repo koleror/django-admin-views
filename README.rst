@@ -67,7 +67,7 @@ Hope you find it useful and as always feedback is certainly welcome.
 Screenshot
 ==========
 
-`Example Screenshot <https://github.com/frankwiles/django-admin-views/wiki>`_
+.. image:: https://github.com/downloads/frankwiles/django-admin-views/example-screenshot.png
 
 Author
 ======
