@@ -1,4 +1,10 @@
 
+Version 0.1.3
+-------------
+
+    - Bah forgot the icons.  I'm obviously too tired to be coding today.
+      Apologies for the release noise.
+
 Version 0.1.2
 -------------
 

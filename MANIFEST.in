@@ -2,3 +2,4 @@ include README.rst
 include AUTHORS.txt
 include LICENSE.txt
 recursive-include admin_views/templates *
+recursive-include admin_views/static *
