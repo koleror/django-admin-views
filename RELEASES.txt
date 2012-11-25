@@ -1,0 +1,12 @@
+
+Version 0.1.2
+-------------
+
+    - Fixed non-inclusino of admin templates.
+
+Version 0.1.1
+-------------
+
+    - Fixed non-inclusion of README.rst which setup.py needed.
+
+Initial release 0.1.0
