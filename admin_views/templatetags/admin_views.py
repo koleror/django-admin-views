@@ -26,7 +26,7 @@ def get_admin_views(app_name):
                     alt_text = "Custom admin view '%s'" % name
 
                 output.append(
-                        """<tr>
+                        u"""<tr>
                               <th scope="row">
                                   <img src="%s" alt="%s" />
                                   <a href="%s">%s</a></th>
