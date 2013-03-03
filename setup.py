@@ -20,6 +20,7 @@ setup(
     package_data={
         'admin_views': [
             'templates/admin/*',
+            'static/admin_views/icons/*',
         ]
     },
     install_requires = [
