@@ -8,7 +8,7 @@ from ..admin import AdminViews
 register = template.Library()
 
 @register.simple_tag
-def get_admin_views(app_name):
+def get_admin_views(app_name, perms):
     output = []
     STATIC_URL = settings.STATIC_URL
 
@@ -17,7 +17,9 @@ def get_admin_views(app_name):
             continue
 
         if isinstance(v, AdminViews):
-            for type, name, link in v.output_urls:
+            for type, name, link, perm in v.output_urls:
+                if perm and not perm in perms:
+                    continue
                 if type == 'url':
                     img_url = "%sadmin_views/icons/link.png" % STATIC_URL
                     alt_text = "Link to '%s'" % name
