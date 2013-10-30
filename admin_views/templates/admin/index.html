@@ -38,7 +38,7 @@
             {% endif %}
             </tr>
         {% endfor %}
-        {% get_admin_views app.name %}
+        {% get_admin_views app.name perms %}
         </table>
         </div>
     {% endfor %}
