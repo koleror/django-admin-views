@@ -1,7 +1,6 @@
 from functools import update_wrapper
 from django.contrib import admin
-from django.conf.urls import url
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 
 class AdminViews(admin.ModelAdmin):
     """
