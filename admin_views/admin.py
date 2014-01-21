@@ -2,6 +2,11 @@ from functools import update_wrapper
 from django.contrib import admin
 from django.conf.urls import url
 from django.conf.urls.defaults import *
+from django.conf import settings
+
+
+ADMIN_URL_PREFIX = getattr(settings, 'ADMIN_VIEWS_URL_PREFIX', '/admin')
+
 
 class AdminViews(admin.ModelAdmin):
     """
@@ -37,9 +42,10 @@ class AdminViews(admin.ModelAdmin):
                     (
                         'view',
                          link[0],
-                         "/admin/%s/%s/%s" % (info[0],
-                                              info[1],
-                                              link[1])
+                         "%s/%s/%s/%s" % (ADMIN_URL_PREFIX,
+                                          info[0],
+                                          info[1],
+                                          link[1])
                     )
                 )
 
@@ -48,4 +54,3 @@ class AdminViews(admin.ModelAdmin):
                 self.output_urls.append(('url', link[0], link[1]))
 
         return added_urls + original_urls
-
