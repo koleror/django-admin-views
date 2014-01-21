@@ -1,7 +1,5 @@
-from functools import update_wrapper
 from django.contrib import admin
-from django.conf.urls import url
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 from django.conf import settings
 
 
@@ -28,26 +26,22 @@ class AdminViews(admin.ModelAdmin):
             if hasattr(self, link[1]):
                 view_func = getattr(self, link[1])
                 added_urls.extend(
-                        patterns('',
-                            url(regex=r'%s' % link[1],
-                                name=link[1],
-                                view=self.admin_site.admin_view(view_func))
+                    patterns('',
+                        url(regex=r'%s' % link[1],
+                            name=link[1],
+                            view=self.admin_site.admin_view(view_func)
                         )
+                    )
                 )
                 self.local_view_names.append(link[0])
 
                 # Build URL from known info
                 info = self.model._meta.app_label, self.model._meta.module_name
-                self.output_urls.append(
-                    (
+                self.output_urls.append((
                         'view',
-                         link[0],
-                         "%s/%s/%s/%s" % (ADMIN_URL_PREFIX,
-                                          info[0],
-                                          info[1],
-                                          link[1])
-                    )
-                )
+                        link[0],
+                        "%s/%s/%s/%s" % (ADMIN_URL_PREFIX, info[0], info[1], link[1])
+                ))
 
             else:
                 self.direct_links.append(link)
