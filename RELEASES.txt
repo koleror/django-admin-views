@@ -1,4 +1,12 @@
 
+Version 0.2.0
+-------------
+
+    -  Unicode fixes
+    -  URL matching regexp fixes
+    -  Support for permission checking in views
+    -  Django 1.6 compatability
+
 Version 0.1.3
 -------------
 
