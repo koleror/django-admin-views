@@ -44,7 +44,7 @@ class AdminViews(admin.ModelAdmin):
                 self.output_urls.append((
                         'view',
                         link[0],
-                        "/admin/%s/%s/%s" % (info[0], info[1], link[1]),
+                        "%s/%s/%s/%s" % (ADMIN_URL_PREFIX, info[0], info[1], link[1]),
                         link[2] if len(link) == 3 else None,
                     )
                 )
