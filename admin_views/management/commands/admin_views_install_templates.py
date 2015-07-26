@@ -23,29 +23,29 @@ class Command(BaseCommand):
             dest_dir = os.path.join(template_dirs[0], 'admin/')
         else:
             # Give user the option of picking which directory from their list
-            print "Which directory would you like the templates installed in?"
-            print "NOTE: The first is *usually* the correct answer."
-            print
+            print("Which directory would you like the templates installed in?")
+            print("NOTE: The first is *usually* the correct answer.")
+            print()
 
             for i, dir in enumerate(template_dirs, start=1):
-                print "    %d) %s" % (i, dir)
+                print("    %d) %s" % (i, dir))
 
-            print
+            print()
 
-            input = raw_input('Enter directory number: ')
+            input_ = input('Enter directory number: ')
             try:
-                dir_num = int(input)
+                dir_num = int(input_)
             except ValueError:
-                print "ERROR: %r is not a number, please try again." % input
+                print("ERROR: %r is not a number, please try again." % input_)
                 return
 
             dest_dir = os.path.join(template_dirs[dir_num-1], 'admin/')
 
-        print "Copying templates to '%s'" % dest_dir
+        print("Copying templates to '%s'" % dest_dir)
 
         # Create the admin directory if necessary
         if not os.path.exists(dest_dir):
-            print "Creating intermediate directories..."
+            print("Creating intermediate directories...")
             os.makedirs(dest_dir)
 
         copyfile(
@@ -53,4 +53,4 @@ class Command(BaseCommand):
                 os.path.join(dest_dir, "index.html")
             )
 
-        print "Done."
+        print("Done.")

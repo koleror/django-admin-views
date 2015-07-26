@@ -28,7 +28,7 @@ def get_admin_views(app_name, perms):
                     alt_text = "Custom admin view '%s'" % name
 
                 output.append(
-                        u"""<tr>
+                        """<tr>
                               <th scope="row">
                                   <img src="%s" alt="%s" />
                                   <a href="%s">%s</a></th>

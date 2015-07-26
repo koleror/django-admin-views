@@ -39,8 +39,13 @@ class AdminViews(admin.ModelAdmin):
                 )
                 self.local_view_names.append(link[0])
 
+                try:
+                    model_name = self.model._meta.model_name
+                except AttributeError:
+                    model_name = self.model._meta.module_name  # removed as of Django 1.8
+
                 # Build URL from known info
-                info = self.model._meta.app_label, self.model._meta.module_name
+                info = self.model._meta.app_label, model_name
                 self.output_urls.append((
                         'view',
                         link[0],
