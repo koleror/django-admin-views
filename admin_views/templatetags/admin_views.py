@@ -1,3 +1,5 @@
+import sys
+
 from django import template
 from django.conf import settings
 from django.core.urlresolvers import reverse
@@ -6,6 +8,15 @@ from django.contrib.admin import site
 from ..admin import AdminViews
 
 register = template.Library()
+
+if sys.version_info < (3,):
+    import codecs
+    def u(x):
+        return codecs.unicode_escape_decode(x)[0]
+else:
+    def u(x):
+        return x
+
 
 @register.simple_tag
 def get_admin_views(app_name, perms):
@@ -28,14 +39,14 @@ def get_admin_views(app_name, perms):
                     alt_text = "Custom admin view '%s'" % name
 
                 output.append(
-                        """<tr>
+                        u("""<tr>
                               <th scope="row">
                                   <img src="%s" alt="%s" />
                                   <a href="%s">%s</a></th>
                               <td>&nbsp;</td>
                               <td>&nbsp;</td>
                            </tr>
-                        """ % (img_url, alt_text, link, name)
+                        """) % (img_url, alt_text, link, name)
                     )
 
     return "".join(output)

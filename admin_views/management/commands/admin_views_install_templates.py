@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os
 from shutil import copyfile
 
@@ -31,6 +32,11 @@ class Command(BaseCommand):
                 print("    %d) %s" % (i, dir))
 
             print()
+
+            try:
+               input = raw_input
+            except NameError:
+               pass
 
             input_ = input('Enter directory number: ')
             try:
