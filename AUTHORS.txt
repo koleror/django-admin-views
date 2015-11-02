@@ -3,4 +3,5 @@ django-admin-views was created by Frank Wiles <frank@revsys.com>
 And contributions from:
 
 Takuya Wakisaka <takuya.wakisaka@moldweorp.com>
-
+Michael Duane Mooring <mike@mdm.cc>
+Kostya Esmukov

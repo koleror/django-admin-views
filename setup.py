@@ -23,10 +23,10 @@ setup(
             'static/admin_views/icons/*',
         ]
     },
-    install_requires = [
+    install_requires=[
         'django>=1.4',
     ],
-    tests_require = ['django-coverage', 'coverage'],
+    tests_require=['django-coverage', 'coverage'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
@@ -37,4 +37,3 @@ setup(
         'Framework :: Django',
     ],
 )
-
