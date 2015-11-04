@@ -26,7 +26,8 @@ def get_admin_views(app, perms):
     STATIC_URL = settings.STATIC_URL
 
     for k, v in site._registry.items():
-        if app['app_label'] not in str(k._meta):
+        app_name = app.get('app_label', app['name'].lower())
+        if app_name not in str(k._meta):
             continue
 
         if isinstance(v, AdminViews):
