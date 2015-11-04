@@ -1,13 +1,15 @@
 import sys
-
 from django import template
 from django.conf import settings
-from django.core.urlresolvers import reverse
-from django.contrib.admin import site
 
+from .. import conf
 from ..admin import AdminViews
+from ..compat import import_string
+
+site = import_string(conf.ADMIN_VIEWS_SITE)
 
 register = template.Library()
+
 
 if sys.version_info < (3,):
     import codecs

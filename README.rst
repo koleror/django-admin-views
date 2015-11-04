@@ -29,6 +29,10 @@ Installation Steps
    You will be prompted for which of these directories you would like it installed
    in if there are multiple directories defined.
 
+If you are using a custom Admin Site, you'll need to configure the ``ADMIN_VIEWS_SITE`` setting to point to your admiin site instance::
+
+    ADMIN_VIEWS_SITE = 'myproject.admin.admin_site'
+
 Usage
 =====
 
