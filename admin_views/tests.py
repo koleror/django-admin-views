@@ -5,6 +5,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.management import call_command
 
+
 class AdminViewsTests(TestCase):
     """ Test django-admin-views """
 
@@ -41,4 +42,3 @@ class AdminViewsTests(TestCase):
 
         if os.path.exists(admin_subdir):
             rmtree(admin_subdir)
-
