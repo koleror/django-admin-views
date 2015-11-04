@@ -5,3 +5,4 @@ And contributions from:
 Takuya Wakisaka <takuya.wakisaka@moldweorp.com>
 Michael Duane Mooring <mike@mdm.cc>
 Kostya Esmukov
+Flavio Curella <http://curella.org/>
