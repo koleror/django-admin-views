@@ -19,12 +19,12 @@ else:
 
 
 @register.simple_tag
-def get_admin_views(app_name, perms):
+def get_admin_views(app, perms):
     output = []
     STATIC_URL = settings.STATIC_URL
 
     for k, v in site._registry.items():
-        if app_name.lower() not in str(k._meta):
+        if app['app_label'] not in str(k._meta):
             continue
 
         if isinstance(v, AdminViews):
