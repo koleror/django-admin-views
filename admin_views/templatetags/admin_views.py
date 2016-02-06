@@ -1,6 +1,7 @@
 import sys
 from django import template
 from django.conf import settings
+from django.utils.html import format_html_join
 
 from .. import conf
 from ..admin import AdminViews
@@ -41,16 +42,14 @@ def get_admin_views(app, perms):
                     img_url = "%sadmin_views/icons/view.png" % STATIC_URL
                     alt_text = "Custom admin view '%s'" % name
 
-                output.append(
-                        u("""<tr>
-                              <th scope="row">
-                                  <img src="%s" alt="%s" />
-                                  <a href="%s">%s</a></th>
-                              <td>&nbsp;</td>
-                              <td>&nbsp;</td>
-                           </tr>
-                        """) % (img_url, alt_text, link, name)
-                    )
+                output.append(map(u, (img_url, alt_text, link, name)))
 
-    return "".join(output)
+    return format_html_join(u(''), u("""<tr>
+                                      <th scope="row">
+                                          <img src="{}" alt="{}" />
+                                          <a href="{}">{}</a></th>
+                                      <td>&nbsp;</td>
+                                      <td>&nbsp;</td>
+                                   </tr>
+                                """), output)
 
