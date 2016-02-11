@@ -42,7 +42,9 @@ def get_admin_views(app, perms):
                     img_url = "%sadmin_views/icons/view.png" % STATIC_URL
                     alt_text = "Custom admin view '%s'" % name
 
-                output.append(map(u, (img_url, alt_text, link, name)))
+                output.append(list(map(u, (img_url, alt_text, link, name))))
+
+    output = sorted(output, key=lambda x: x[3])
 
     return format_html_join(u(''), u("""<tr>
                                       <th scope="row">
