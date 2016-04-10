@@ -1,6 +1,7 @@
 import sys
 from django import template
 from django.conf import settings
+from django.utils.safestring import mark_safe
 
 from .. import conf
 from ..admin import AdminViews
@@ -52,5 +53,5 @@ def get_admin_views(app, perms):
                         """) % (img_url, alt_text, link, name)
                     )
 
-    return "".join(output)
+    return mark_safe("".join(output))
 
