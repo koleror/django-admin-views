@@ -22,14 +22,9 @@ Installation Steps
 
 1. ``pip install django-admin-views``
 
-2. Add ``admin_views`` to ``INSTALLED_APPS`` in your ``settings.py``
+2. Add ``admin_views`` to ``INSTALLED_APPS`` in your ``settings.py`` before admin site, i.e. ``django.contrib.admin``
 
-3. Run the management command ``admin_views_install_templates`` to install the
-   necessary modified admin index template to your project's TEMPLATE_DIRs.
-   You will be prompted for which of these directories you would like it installed
-   in if there are multiple directories defined.
-
-If you are using a custom Admin Site, you'll need to configure the ``ADMIN_VIEWS_SITE`` setting to point to your admiin site instance::
+If you are using a custom Admin Site, you'll need to configure the ``ADMIN_VIEWS_SITE`` setting to point to your admin site instance::
 
     ADMIN_VIEWS_SITE = 'myproject.admin.admin_site'
 
@@ -63,8 +58,8 @@ These will now show up in the admin below the usual Django admin model CRUD inte
 for `example_app` with a couple of different icons to distinquish between custom admin
 views and a direct URL link.
 
-With this third-party developers need only instruct their users to install their app,
-``django-admin-views`` and run the ``admin_views_install_templates`` command.
+With this third-party developers need only instruct their users to install their app
+and ``django-admin-views``.
 
 Hope you find it useful and as always feedback is certainly welcome.
 
