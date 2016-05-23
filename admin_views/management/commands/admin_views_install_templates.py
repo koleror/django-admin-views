@@ -1,7 +1,9 @@
 from __future__ import print_function
+import django
 import os
 from shutil import copyfile
 
+from distutils.version import StrictVersion
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
@@ -14,7 +16,13 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         current_dir = os.path.dirname(__file__)
-        template_dirs = settings.TEMPLATE_DIRS
+        if StrictVersion(django.get_version()) < StrictVersion('1.8'):
+            template_dirs = settings.TEMPLATE_DIRS
+        else:
+            template_dirs = []
+            for template_engine in settings.TEMPLATES:
+                if template_engine['BACKEND'] == 'django.template.backends.django.DjangoTemplates':
+                    template_dirs = template_dirs + template_engine['DIRS']
 
         if args:
             # Handle case where dir specified on commandline
