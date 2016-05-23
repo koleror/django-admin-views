@@ -2,6 +2,7 @@ import sys
 from django import template
 from django.conf import settings
 from django.utils.safestring import mark_safe
+from django.utils.html import format_html_join
 
 from .. import conf
 from ..admin import AdminViews
@@ -14,6 +15,7 @@ register = template.Library()
 
 if sys.version_info < (3,):
     import codecs
+
     def u(x):
         return codecs.unicode_escape_decode(x)[0]
 else:
@@ -33,7 +35,7 @@ def get_admin_views(app, perms):
 
         if isinstance(v, AdminViews):
             for type, name, link, perm in v.output_urls:
-                if perm and not perm in perms:
+                if perm and perm not in perms:
                     continue
                 if type == 'url':
                     img_url = "%sadmin_views/icons/link.png" % STATIC_URL
@@ -42,16 +44,19 @@ def get_admin_views(app, perms):
                     img_url = "%sadmin_views/icons/view.png" % STATIC_URL
                     alt_text = "Custom admin view '%s'" % name
 
-                output.append(
-                        u("""<tr>
-                              <th scope="row">
-                                  <img src="%s" alt="%s" />
-                                  <a href="%s">%s</a></th>
-                              <td>&nbsp;</td>
-                              <td>&nbsp;</td>
-                           </tr>
-                        """) % (img_url, alt_text, link, name)
-                    )
+                output.append(list(map(u, (img_url, alt_text, link, name))))
 
-    return mark_safe("".join(output))
+    output = sorted(output, key=lambda x: x[3])
 
+    return mark_safe(
+        format_html_join(
+            u(''),
+            u("""<tr>
+                    <th scope="row">
+                    <img src="{}" alt="{}" />
+                    <a href="{}">{}</a></th>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+              """), output)
+      )
