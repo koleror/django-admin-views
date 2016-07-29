@@ -30,12 +30,12 @@ class AdminViews(admin.ModelAdmin):
                     # View requires permission
                     view_func = permission_required(link[2], raise_exception=True)(view_func)
                 added_urls.extend(
-                    patterns('',
+                    [
                         url(regex=r'^%s$' % link[1],
                             name=link[1],
                             view=self.admin_site.admin_view(view_func)
                         )
-                    )
+                    ]
                 )
                 self.local_view_names.append(link[0])
 
