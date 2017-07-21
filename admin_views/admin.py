@@ -22,6 +22,7 @@ class AdminViews(admin.ModelAdmin):
     def get_urls(self):
         original_urls = super(AdminViews, self).get_urls()
         added_urls = []
+        self.output_urls = []
 
         for link in self.admin_views:
             if hasattr(self, link[1]):
