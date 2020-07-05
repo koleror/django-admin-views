@@ -28,13 +28,14 @@ class AdminViews(admin.ModelAdmin):
                 view_func = getattr(self, link[1])
                 if len(link) == 3:
                     # View requires permission
-                    view_func = permission_required(link[2], raise_exception=True)(view_func)
+                    view_func = permission_required(
+                        link[2], raise_exception=True)(view_func)
                 added_urls.extend(
                     [
                         url(regex=r'^%s$' % link[1],
                             name=link[1],
                             view=self.admin_site.admin_view(view_func)
-                        )
+                            )
                     ]
                 )
                 self.local_view_names.append(link[0])
@@ -47,14 +48,16 @@ class AdminViews(admin.ModelAdmin):
                 # Build URL from known info
                 info = self.model._meta.app_label, model_name
                 self.output_urls.append((
-                        'view',
-                        link[0],
-                        "%s/%s/%s/%s" % (ADMIN_URL_PREFIX, info[0], info[1], link[1]),
-                        link[2] if len(link) == 3 else None,
-                    )
+                    'view',
+                    link[0],
+                    "%s/%s/%s/%s" % (ADMIN_URL_PREFIX,
+                                     info[0], info[1], link[1]),
+                    link[2] if len(link) == 3 else None,
+                )
                 )
             else:
                 self.direct_links.append(link)
-                self.output_urls.append(('url', link[0], link[1], link[2] if len(link) == 3 else None))
+                self.output_urls.append(
+                    ('url', link[0], link[1], link[2] if len(link) == 3 else None))
 
         return added_urls + original_urls

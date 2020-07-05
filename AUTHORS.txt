@@ -8,3 +8,4 @@ Kostya Esmukov <kostya@esmukov.ru>
 Flavio Curella <http://curella.org/>
 Ruthie BenDor <ruthie@unruthless.com>
 Binoj David <dbinoj@gmail.com>
+Vitalii Shishorin <moskrc@gmail.com>

@@ -24,7 +24,7 @@ setup(
         ]
     },
     install_requires=[
-        'django>=1.6',
+        'django>=3.0',
     ],
     tests_require=['django-coverage', 'coverage'],
     classifiers=[
