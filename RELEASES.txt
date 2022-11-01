@@ -1,3 +1,11 @@
+Version 1.0.2
+--------------
+    - Fix deployment package
+
+Version 1.0.1
+--------------
+    - Fix deployment
+
 Version 1.0.0
 --------------
     - Drop django<3 support

@@ -73,5 +73,5 @@ Author
 Frank Wiles frank@revsys.com
 
 Maintainer
-======
+==========
 Hugo Defrance defrance.hugo@gmail.com
