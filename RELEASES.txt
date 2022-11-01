@@ -1,9 +1,13 @@
 Version 1.0.0
 --------------
-
     - Drop django<3 support
     - Adds support for django3.2
     - Updates project's ownership
+    - Refacto project packaging
+
+Version 0.8.0
+--------------
+    - ?
 
 Version 0.7.0
 --------------

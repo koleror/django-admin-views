@@ -1,5 +1,5 @@
 include README.rst
 include AUTHORS.txt
-include LICENSE.txt
+include LICENSE
 recursive-include admin_views/templates *
 recursive-include admin_views/static *

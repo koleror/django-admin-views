@@ -1,0 +1,48 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-admin-views"
+version = "0.8.0"
+description = "django-admin-views is a simple way to add custom admin views and direct URLs to the Django admin"
+readme = "README.rst"
+authors = [{ name = "Hugo Defrance", email = "defrance.hugo@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Framework :: Django',
+]
+keywords = ["django", "admin"]
+dependencies = [
+    "django >= 3.2",
+]
+
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = ["black", "bumpver", "isort"]
+
+[project.urls]
+Homepage = "https://github.com/koleror/django-admin-views"
+
+[tool.setuptools]
+packages = ["admin_views"]
+
+[tool.bumpver]
+current_version = "0.8.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = true
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = [
+    'current_version = "{version}"',
+]
+"admin_views/__init__.py" = ["{version}"]
