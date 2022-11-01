@@ -1,4 +1,5 @@
 django-admin-views was created by Frank Wiles <frank@revsys.com>
+and is now maintained by Hugo Defrance <defrance.hugo@gmail.com>
 
 And contributions from:
 

@@ -1,8 +1,8 @@
 import os
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 from admin_views import VERSION
-
 
 f = open(os.path.join(os.path.dirname(__file__), 'README.rst'))
 readme = f.read()
@@ -11,11 +11,14 @@ f.close()
 setup(
     name='django-admin-views',
     version=".".join(map(str, VERSION)),
-    description='django-admin-views is a simple way to add custom admin views and direct URLs to the Django admin',
+    description=(
+        'django-admin-views is a simple way to add custom admin views and direct URLs '
+        'to the Django admin'
+    ),
     long_description=readme,
-    author='Frank Wiles',
-    author_email='frank@revsys.com',
-    url='https://github.com/frankwiles/django-admin-views',
+    author='Hugo Defrance',
+    author_email='defance.hugo@gmail.com',
+    url='https://github.com/koleror/django-admin-views',
     packages=find_packages(),
     package_data={
         'admin_views': [
@@ -24,7 +27,7 @@ setup(
         ]
     },
     install_requires=[
-        'django>=1.6',
+        'django>=3.2',
     ],
     tests_require=['django-coverage', 'coverage'],
     classifiers=[

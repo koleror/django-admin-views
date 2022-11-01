@@ -1,4 +1,11 @@
-Veresion 0.7.0
+Version 1.0.0
+--------------
+
+    - Drop django<3 support
+    - Adds support for django3.2
+    - Updates project's ownership
+
+Version 0.7.0
 --------------
 
     - Fix merge artifacts that were released

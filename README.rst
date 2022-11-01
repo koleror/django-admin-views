@@ -46,11 +46,11 @@ and a direct URL link that goes to my company's homepage::
     class TestAdmin(AdminViews):
         admin_views = (
                         ('Redirect to CNN', 'redirect_to_cnn'),
-                        ('Go to revsys.com', 'http://www.revsys.com'),
+                        ('Go to google.com', 'https:/google.com'),
             )
 
         def redirect_to_cnn(self, *args, **kwargs):
-            return redirect('http://www.cnn.com')
+            return redirect('https://www.cnn.com')
 
     admin.site.register(TestModel, TestAdmin)
 
@@ -66,15 +66,12 @@ Hope you find it useful and as always feedback is certainly welcome.
 Screenshot
 ==========
 
-.. image:: https://raw.githubusercontent.com/frankwiles/django-admin-views/master/example_project/example-screenshot.png
+.. image:: https://raw.githubusercontent.com/koleror/django-admin-views/master/screenshots/admin.png
 
 Author
 ======
-Frank Wiles <frank@revsys.com> <http://www.revsys.com>
+Frank Wiles frank@revsys.com
 
-Attribution
-===========
-Blue link icon on direct URLs by http://www.doublejdesign.co.uk/
-
-Admin view icon by http://www.fatcow.com/
-
+Maintainer
+======
+Hugo Defrance defrance.hugo@gmail.com

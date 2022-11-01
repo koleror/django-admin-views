@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = ">=3,<4"
+django-admin-views = "*"
+
+[dev-packages]
+ipython = "*"
+pdbpp = "*"
+django-non-dark-admin = "*"
+
+[requires]
+python_version = "3.10"
+
+[scripts]
+shell = "python manage.py shell"
+server = "python manage.py runserver"
+migrate = "python manage.py migrate"
