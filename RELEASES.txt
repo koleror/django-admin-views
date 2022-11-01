@@ -1,3 +1,7 @@
+Version 1.0.3
+--------------
+    - Fix deployment pipeline
+
 Version 1.0.2
 --------------
     - Fix deployment package
