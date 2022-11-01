@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'admin_views',
-    'django_non_dark_admin',
+    # 'django_non_dark_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
