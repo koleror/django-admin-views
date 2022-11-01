@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-admin-views"
-version = "0.8.0"
+version = "1.0.1"
 description = "django-admin-views is a simple way to add custom admin views and direct URLs to the Django admin"
 readme = "README.rst"
 authors = [{ name = "Hugo Defrance", email = "defrance.hugo@gmail.com" }]
