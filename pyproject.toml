@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-admin-views"
-version = "1.0.2"
+version = "1.0.3"
 description = "django-admin-views is a simple way to add custom admin views and direct URLs to the Django admin"
 readme = "README.rst"
 authors = [{ name = "Hugo Defrance", email = "defrance.hugo@gmail.com" }]
@@ -34,7 +34,7 @@ Homepage = "https://github.com/koleror/django-admin-views"
 packages = ["admin_views"]
 
 [tool.bumpver]
-current_version = "1.0.2"
+current_version = "1.0.3"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
