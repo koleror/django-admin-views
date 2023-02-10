@@ -22,19 +22,23 @@ Installation Steps
 
 1. ``pip install django-admin-views``
 
-2. Add ``admin_views`` to ``INSTALLED_APPS`` in your ``settings.py`` before admin site, i.e. ``django.contrib.admin``
+2. Add ``admin_views`` to ``INSTALLED_APPS`` in your ``settings.py`` before admin site, i.e. ``django.contrib.admin``.
 
-If you are using a custom Admin Site, you'll need to configure the ``ADMIN_VIEWS_SITE`` setting to point to your admin site instance::
+If you are using a custom Admin Site, you'll need to configure the ``ADMIN_VIEWS_SITE`` setting to point to your admin site instance:
 
-    ADMIN_VIEWS_SITE = 'myproject.admin.admin_site'
+.. code-block:: python
+
+    ADMIN_VIEWS_SITE = "myproject.admin.admin_site"
 
 Usage
 =====
 
-All of this magic happens in your model's admin definition.  You simply subclass your
+All of this magic happens in your model's admin definition.  Subclass your
 admin from ``AdminViews`` instead of the standard ``admin.ModelAdmin``.
 In this example we have a custom view that does nothing but redirect the user to CNN
-and a direct URL link that goes to my company's homepage::
+and a direct URL link that goes to Google:
+
+.. code-block:: python
 
     from django.contrib import admin
     from django.shortcuts import redirect
@@ -45,17 +49,17 @@ and a direct URL link that goes to my company's homepage::
 
     class TestAdmin(AdminViews):
         admin_views = (
-                        ('Redirect to CNN', 'redirect_to_cnn'),
-                        ('Go to google.com', 'https:/google.com'),
-            )
+            ("Redirect to CNN", "redirect_to_cnn"),
+            ("Go to google.com", "https://google.com"),
+        )
 
         def redirect_to_cnn(self, *args, **kwargs):
-            return redirect('https://www.cnn.com')
+            return redirect("https://www.cnn.com")
 
     admin.site.register(TestModel, TestAdmin)
 
 These will now show up in the admin below the usual Django admin model CRUD interfaces
-for `example_app` with a couple of different icons to distinquish between custom admin
+for ``example_app`` with a couple of different icons to distinquish between custom admin
 views and a direct URL link.
 
 With this third-party developers need only instruct their users to install their app
