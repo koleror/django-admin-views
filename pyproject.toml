@@ -31,7 +31,7 @@ dev = ["black", "bumpver", "isort"]
 Homepage = "https://github.com/koleror/django-admin-views"
 
 [tool.setuptools]
-packages = ["admin_views"]
+packages = ["admin_views", "admin_views.templatetags"]
 
 [tool.bumpver]
 current_version = "1.0.3"
